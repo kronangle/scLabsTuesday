@@ -10,6 +10,12 @@ public class Calculator {
 	public void addTwoNumber(int x, int y) {
 		this.answer = x + y;
 	}
+	public void subtractTwoNumber(int x, int y) {
+		this.answer = x - y;
+	}
+	public void multiplyTwoNumber(int x, int y) {
+		this.answer = x * y;
+	}
 
 	public int getresult() {
 		return this.answer;

@@ -8,6 +8,7 @@ import org.junit.Assert;
 import com.qa.core.Calculator;
 
 public class CalculatorStep {
+	
 	private Calculator myCal;
 	
 	@Given("a calculator")
@@ -20,9 +21,24 @@ public class CalculatorStep {
 	public void AddCal(int x,int y) {
 		myCal.addTwoNumber(x, y);
 	}
+	
+	@When("I subtract $number1 and $number2")
+	public void ASubtractCal(int x,int y) {
+		myCal.subtractTwoNumber(x, y);
+	}
+	
+	@When("I multiply $number1 and $number2")
+	public void MultiplyCal(int number1,int number2) {
+		myCal.multiplyTwoNumber(number1, number2);
+	}
 
 	@Then("the outcome should be $result")
-	public void testResult(int output) {
+	public void testOutcome(int output) {
 		 Assert.assertEquals(output, myCal.getresult());
+	}
+	
+	@Then("the result should be $result")
+	public void testResult(int result) {
+		Assert.assertEquals(result, myCal.getresult());
 	}
 }
